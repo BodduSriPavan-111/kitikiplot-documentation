@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KitikiPlot</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="icon" href="assets/logo.ico" type="image/x-icon" />
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar {
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-nav .nav-link {
+      color: black;
+      font-weight: 500;
+      margin: 0 10px;
+      position: relative;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: #007bff;
+    }
+
+    .navbar-nav .nav-link.active::after,
+    .navbar-nav .nav-link:hover::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #007bff;
+      border-radius: 5px;
+    }
+
+    .hero {
+      padding: 140px 20px 100px 20px;
+      background: linear-gradient(to right, #f0fff0, #e0f7fa);
+    }
+
+    .hero-logo {
+      max-height: 240px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #000000;
+    }
+
+    .hero p.lead {
+      font-size: 1.3rem;
+      margin-top: 15px;
+      color: #333;
+    }
+
+    .hero .tagline {
+      font-size: 1rem;
+      margin-top: 8px;
+      color: #666;
+    }
+
+    .btn-hero {
+      font-size: 1.1rem;
+      padding: 12px 30px;
+      color: white;
+      background: #00796b;
+      border: none;
+      border-radius: 8px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-hero:hover {
+      background: hsl(69, 69%, 45%);
+      color: #ffffff;
+      transform: scale(1.05);
+    }
+
+    .use-cases {
+      padding: 60px 20px;
+    }
+
+    .use-case-card {
+      transition: transform 0.3s ease;
+    }
+
+    .use-case-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .use-case-card {
+      border-radius: 16px;
+      border: 1px solid #dcdcdc;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .use-case-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Apply unique background for each */
+    .use-case-card:nth-child(1) {
+      background-color: #e8f4fc;
+      /* light blue for Genomics */
+    }
+
+    .use-case-card:nth-child(2) {
+      background-color: #ecffe8;
+      /* soft lime for Ecology */
+    }
+
+    .use-case-card:nth-child(3) {
+      background-color: #fffce5;
+      /* pastel yellow for Core */
+    }
+
+    .use-case-card .card-img-top {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      background-color: #ffffff;
+      padding: 16px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .use-case-card .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #2a2a2a;
+      margin-top: 12px;
+    }
+
+    .use-case-card .card-text {
+      font-size: 0.95rem;
+      color: #444;
+      padding: 0 16px;
+    }
+
+    .use-case-card .btn {
+      margin-top: 12px;
+      margin-bottom: 14px;
+      font-weight: 500;
+      transition: all 0.25s ease-in-out;
+    }
+
+    /* Keep your current button variants but enhance hover feedback */
+    .use-case-card .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .contributors {
+      padding: 60px 20px;
+      /* background-color: #f0f0f0; */
+      padding: 100px 20px 120px 20px; /* Increased top and bottom padding */
+      background: linear-gradient(to right, #f0fff0, #e6ffe1);
+    }
+
+    .contributor-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin: 8px;
+      object-fit: cover;
+      transition: transform 0.2s ease;
+    }
+
+    .contributor-img:hover {
+      transform: scale(1.1);
+    }
+
+    .publication-logo {
+      max-height: 100px;
+      max-width: 150px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .publication-logo:hover {
+      transform: scale(1.05);
+
+      .footer-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        color: #343a40;
+        text-decoration: none !important;
+        margin-bottom: 0.4rem;
+        font-size: 0.95rem;
+        transition: color 0.3s ease, transform 0.2s ease;
+      }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="assets/logo.png" alt="KitikiPlot Logo" style="height: 30px;" class="me-2"> <strong>KitikiPlot</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="docs.html">Getting Started</a></li>
+          <li class="nav-item"><a class="nav-link" href="#use-cases">Use Cases</a></li>
+          <li class="nav-item"><a class="nav-link" href="#community">Community</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/BodduSriPavan-111/kitikiplot" target="_blank"><i
+                class="fab fa-github"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="https://pypi.org/project/kitikiplot/" target="_blank"><i
+                class="fab fa-python"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="https://discord.gg/8SXVE47U" target="_blank"><i
+                class="fab fa-discord"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero container-fluid">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-lg-2 mb-3 mb-lg-0">
+      </div>
+      <div class="col-lg-3 mb-4 mb-lg-0">
+        <img src="assets/logo.png" alt="KitikiPlot Logo" class="hero-logo">
+      </div>
+      <div class="col-lg-1 mb-3 mb-lg-0">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-3 fw-bold">KitikiPlot</h1>
+        <p class="lead">A Python library to visualize categorical sliding window data</p>
+        <p class="tagline text-muted fst-italic">The term ‘kitiki’ means ‘window’ in Telugu</p>
+        <a href="docs.html" class="btn btn-hero mt-4">Getting Started</a>
+      </div>
+    </div>
+  </section>
+
+
+  </br></br></br></br>
+  <div class="text-center mb-5">
+    <p class="lead">Offers intuitive visual analytics for <b>Genomics, Pollution Management, Climate Analysis,</b> and more
+    </p>
+  </div>
+
+  <!-- Use Cases Section -->
+  <section id="use-cases" class="use-cases container">
+    <div class="text-center mb-5">
+      <h2>Use Cases</h2>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-4 mb-4">
+        <div class="card use-case-card h-100">
+          <img src="assets/Genome_1.png" class="card-img-top" alt="Genomics">
+          <div class="card-body">
+            <h5 class="card-title">Genomics</h5>
+            <p class="card-text">Visualise genomic sliding data across gene sequences effectively</p>
+            <a href="docs.html?expand=genomics" class="btn btn-outline-primary">Explore Genomics</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card use-case-card h-100">
+          <img src="assets/Air_Quality_0.png" class="card-img-top" alt="Ecology">
+          <div class="card-body">
+            <h5 class="card-title">Ecology</h5>
+            <p class="card-text">Monitor and visualize ecological changes over time with clarity</p>
+            <a href="docs.html?expand=ecology" class="btn btn-outline-primary">Dive into Ecology</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card use-case-card h-100">
+          <img src="assets/VisualGesturesJS_1.png" class="card-img-top" alt="Core">
+          <div class="card-body">
+            <h5 class="card-title">Core</h5>
+            <p class="card-text">Adaptable to core domains like electronics and data tracking</p>
+            <a href="docs.html?expand=core" class="btn btn-outline-primary">Check Core Usage</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </br></br>
+
+  <!-- Contributors Section -->
+  <section id="community" class="contributors text-center">
+    <h2>Contributors</h2>
+    <div class="d-flex flex-wrap justify-content-center">
+      <a href="https://github.com/BodduSriPavan-111" target="_blank"><img src="https://github.com/BodduSriPavan-111.png"
+          class="contributor-img" alt="User 1"></a>
+      <a href="https://github.com/jewels86" target="_blank"><img src="https://github.com/jewels86.png"
+          class="contributor-img" alt="User 2"></a>
+      <a href="https://github.com/NarmalaSk" target="_blank"><img src="https://github.com/NarmalaSk.png"
+          class="contributor-img" alt="User 2"></a>
+      <a href="https://github.com/saibhagavanp" target="_blank"><img src="https://github.com/saibhagavanp.png"
+          class="contributor-img" alt="User 2"></a>
+    </div>
+  </section>
+  </br></br></br>
+  <!-- Publication Section -->
+  <section class="publication text-center py-5 container-fluid">
+    <h4>KitikiPlot featured in</h4>
+    </br></br>
+    <div class="row justify-content-center align-items-center gx-4 gy-4">
+      <div class="col-3 col-md-2">
+        <a href="https://www.techrxiv.org/users/877016/articles/1256589-kitikiplot-a-python-library-to-visualize-categorical-sliding-window-data" target="_blank">
+          <img src="assets/TechRxiv.jpg" class="publication-logo" alt="TechArxiv">
+        </a>
+      </div>
+      <div class="col-3 col-md-2">
+        <a href="https://zenodo.org/records/14632005" target="_blank">
+          <img src="assets/GIS.png" class="publication-logo" alt="GIS Science">
+        </a>
+      </div>
+      <div class="col-3 col-md-2">
+        <a href="https://zenodo.org/records/15563468" target="_blank">
+          <img src="assets/zenodo.png" class="publication-logo" alt="Zenodo">
+        </a>
+      </div>
+      <div class="col-3 col-md-2">
+        <a href="https://www.analyticsvidhya.com/blog/2024/12/kitikiplot/" target="_blank">
+          <img src="assets/analytics_vidhya.jpg" class="publication-logo" alt="Analytics Vidhya">
+        </a>
+      </div>
+    </div>
+  </section>
+  </br></br></br></br>
+  <footer class="footer bg-secondary-subtle pt-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1 mb-3"></div>
+        <!-- Branding Column -->
+        <div class="col-md-3 mb-3">
+          <img src="assets/banner.png" alt="KitikiPlot Logo" style="height: 50px;">
+          <p class="small mt-2">A Python library to visualize categorical sliding window data</p>
+          <small class="text-muted d-block">&copy; 2025 Designed by <strong>Boddu Sri Pavan</strong></small>
+        </div>
+        <div class="col-md-2 mb-3"></div>
+        <!-- Navigation Links -->
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase fw-bold mb-2">Project</h6>
+          <ul class="list-unstyled">
+            <li><a href="https://github.com/BodduSriPavan-111/kitikiplot" target="_blank" style="text-decoration: none;"
+                class="footer-link">GitHub</a></li>
+            <li><a href="https://github.com/BodduSriPavan-111/kitikiplot/blob/main/code_of_conduct.md" style="text-decoration: none;" class="footer-link">Code of Conduct</a></li>
+            <li><a href="https://github.com/BodduSriPavan-111/kitikiplot/blob/main/SECURITY.md" style="text-decoration: none;" class="footer-link">Security Policy</a></li>
+            <li><a href="https://github.com/BodduSriPavan-111/kitikiplot/blob/main/CONTRIBUTING.md" style="text-decoration: none;" class="footer-link">Contributor Guidelines</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 mb-3"></div>
+        <!-- Community Links -->
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase fw-bold mb-2">Community</h6>
+          <ul class="list-unstyled">
+            <li><a href="https://pypi.org/project/kitikiplot/" target="_blank" style="text-decoration: none;"
+                class="footer-link">PyPI</a></li>
+            <li><a href="https://discord.com/invite/8SXVE47U" target="_blank" style="text-decoration: none;"
+                class="footer-link">Discord</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+  function activateNavLink() {
+    let current = "";
+    const scrollY = window.pageYOffset + 100;
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", activateNavLink);
+</script>
+
+</body>
+
+</html>
