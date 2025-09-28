@@ -14,7 +14,7 @@
   <!-- Prism.js Python language support -->
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="icon" href="assets/logo.ico" type="image/x-icon" />
 
   <style>
     /* Reset */
@@ -48,7 +48,7 @@
     /* Sidebar (left) */
     .sidebar {
       width: 20%;
-      background: #dce4e5;
+      background: linear-gradient(to right, #eeeeee, #e9e9e9);
       color: #0066ff;
       /* light gray */
       display: flex;
@@ -122,7 +122,7 @@
     }
 
     .nav-section:hover {
-      background-color: #ffde59;
+      background-color: #d8d8d8;
       /* darker green */
     }
 
@@ -176,12 +176,12 @@
     }
 
     .nav-item:hover {
-      background-color: #ffde59;
+      background-color: #d8d8d8;
       color: #000000;
     }
 
     .nav-item.active {
-      background-color: #ffde59;
+      background-color: #c9cfd0;
       /* lime-500 */
       color: #1f2937;
       /* dark bg for contrast */
@@ -199,7 +199,7 @@
     }
 
     .nav-section.direct-link.active {
-      background-color: #ffde59;
+      background-color: #c9cfd0;
       color: #1f2937;
       font-weight: normal;
       box-shadow: inset 3px 0 0 0 #15803d;
@@ -323,7 +323,7 @@
   display: inline-block;
   font-weight: 600;
   font-size: 3.5rem;
-  background: linear-gradient(to right, #bd9700, #01a33c);
+  background: linear-gradient(to right, #28a745, #9feb3c);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -361,8 +361,8 @@
 }
 
     .author-note {
-      background: linear-gradient(to right, #ffde59, #fce482);
-      border-left: 6px solid #01a33c;
+      background: linear-gradient(to right, #f0fff0, #e0f7fa);
+      border-left: 6px solid #007acc;
       border-radius: 10px;
       padding: 1.5rem;
       margin: 2rem 0;
@@ -372,15 +372,15 @@
       color: #333;
     }
 
-    .author-note h2 {
+    .author-note h3 {
       margin-top: 0;
       margin-bottom: 1rem;
       font-size: 1.3rem;
-      color: #01a33c;
+      color: #007acc;
     }
 
     .author-note a {
-      color: #9c6500;
+      color: #007acc;
       text-decoration: underline;
       font-weight: 500;
     }
@@ -457,8 +457,8 @@
     <aside class="sidebar" role="navigation" aria-label="Main Navigation">
 
       <div class="sidebar-top">
-        <a href="index.html"><img src="assets/banner_docs_no_background.png" alt="Chandassu Logo"
-            style="width: 100%; max-width: 250px; height: 100%;margin-top: -3%;" /></a>
+        <a href="index.html"><img src="assets/banner.png" alt="KitikiPlot Logo"
+            style="width: 100%; max-width: 250px;" /></a>
       </div>
       <nav>
         <!-- Home -->
@@ -470,31 +470,82 @@
         <li class="nav-section direct-link" data-key="getting-started">
           <span>Getting Started</span>
         </li>
+        <!-- kitikiplot.genomics -->
+        <li class="nav-section">
+          <span>kitikiplot.genomics</span>
+          <i class="fas fa-chevron-right"></i>
+        </li>
+        <ul class="nav-items collapsed">
+          <li class="nav-item" data-key="genomics-linear"><i class="fas fa-arrows-alt-h"></i>linear</li>
+          <li class="nav-item" data-key="genomics-grid"><i class="fas fa-arrows-alt-h"></i>grid</li>
+        </ul>
+        <!-- kitikiplot.ecology -->
+        <li class="nav-section">
+          <span>kitikiplot.ecology</span>
+          <i class="fas fa-chevron-right"></i>
+        </li>
+        <ul class="nav-items collapsed">
+          <li class="nav-item" data-key="ecology-linear"><i class="fas fa-arrows-alt-h"></i>linear</li>
+          <li class="nav-item" data-key="ecology-grid"><i class="fas fa-arrows-alt-h"></i>grid</li>
+        </ul>
 
-        <li class="nav-section direct-link" data-key="AksharamTokenizer">
-          <span>Aksharam Tokenizer</span>
+        <!-- KitikiPlot.core -->
+        <li class="nav-section">
+          <span>KitikiPlot.core</span>
+          <i class="fas fa-chevron-right"></i>
         </li>
 
-        <li class="nav-section direct-link" data-key="LaghuvuGuruvuGenerator">
-          <span>LaghuvuGuruvu Generator</span>
-        </li>
-
-        <li class="nav-section direct-link" data-key="PadyaBhedamChecker">
-          <span>PadyaBhedam Checker</span>
-        </li>
-        
+        <ul class="nav-items collapsed">
+          <li class="nav-item" data-key="core-data"><i class="fas fa-arrows-alt-h"></i>data</li>
+          <li class="nav-item" data-key="core-stride"><i class="fas fa-arrows-alt-h"></i>stride</li>
+          <li class="nav-item" data-key="core-window_length"><i class="fas fa-arrows-alt-v"></i>window_length</li>
+          <li class="nav-item" data-key="core-figsize"><i class="fas fa-arrows-alt-v"></i>figsize</li>
+          <li class="nav-item" data-key="core-cell_width"><i class="fas fa-arrows-alt-v"></i>cell_width</li>
+          <li class="nav-item" data-key="core-cell_height"><i class="fas fa-arrows-alt-v"></i>cell_height</li>
+          <li class="nav-item" data-key="core-window_gap"><i class="fas fa-arrows-alt-v"></i>window_gap</li>
+          <li class="nav-item" data-key="core-window_range"><i class="fas fa-arrows-alt-v"></i>window_range</li>
+          <li class="nav-item" data-key="core-align"><i class="fas fa-arrows-alt-v"></i>align</li>
+          <li class="nav-item" data-key="core-cmap"><i class="fas fa-arrows-alt-v"></i>cmap</li>
+          <li class="nav-item" data-key="core-edge_color"><i class="fas fa-arrows-alt-v"></i>edge_color</li>
+          <li class="nav-item" data-key="core-fallback_color"><i class="fas fa-arrows-alt-v"></i>fallback_color</li>
+          <li class="nav-item" data-key="core-hmap"><i class="fas fa-arrows-alt-v"></i>hmap</li>
+          <li class="nav-item" data-key="core-fallback_hatch"><i class="fas fa-arrows-alt-v"></i>fallback_hatch</li>
+          <li class="nav-item" data-key="core-display_hatch"><i class="fas fa-arrows-alt-v"></i>display_hatch</li>
+          <li class="nav-item" data-key="core-focus"><i class="fas fa-arrows-alt-v"></i>focus</li>
+          <li class="nav-item" data-key="core-focus_alpha"><i class="fas fa-arrows-alt-v"></i>focus_alpha</li>
+          <li class="nav-item" data-key="core-transpose"><i class="fas fa-arrows-alt-v"></i>transpose</li>
+          <li class="nav-item" data-key="core-xlabel"><i class="fas fa-arrows-alt-v"></i>xlabel</li>
+          <li class="nav-item" data-key="core-ylabel"><i class="fas fa-arrows-alt-v"></i>ylabel</li>
+          <li class="nav-item" data-key="core-display_xticks"><i class="fas fa-arrows-alt-v"></i>display_xticks</li>
+          <li class="nav-item" data-key="core-display_yticks"><i class="fas fa-arrows-alt-v"></i>display_yticks</li>
+          <li class="nav-item" data-key="core-xtick_prefix"><i class="fas fa-arrows-alt-v"></i>xtick_prefix</li>
+          <li class="nav-item" data-key="core-ytick_prefix"><i class="fas fa-arrows-alt-v"></i>ytick_prefix</li>
+          <li class="nav-item" data-key="core-xticks_values"><i class="fas fa-arrows-alt-v"></i>xticks_values</li>
+          <li class="nav-item" data-key="core-yticks_values"><i class="fas fa-arrows-alt-v"></i>yticks_values</li>
+          <li class="nav-item" data-key="core-xticks_rotation"><i class="fas fa-arrows-alt-v"></i>xticks_rotation</li>
+          <li class="nav-item" data-key="core-yticks_rotation"><i class="fas fa-arrows-alt-v"></i>yticks_rotation</li>
+          <li class="nav-item" data-key="core-title"><i class="fas fa-arrows-alt-v"></i>title</li>
+          <li class="nav-item" data-key="core-display_grid"><i class="fas fa-arrows-alt-v"></i>display_grid</li>
+          <li class="nav-item" data-key="core-display_legend"><i class="fas fa-arrows-alt-v"></i>display_legend</li>
+          <li class="nav-item" data-key="core-legend_hatch"><i class="fas fa-arrows-alt-v"></i>legend_hatch</li>
+          <li class="nav-item" data-key="core-return_figure"><i class="fas fa-arrows-alt-v"></i>return_figure</li>
+          <li class="nav-item" data-key="core-legend_kwargs"><i class="fas fa-arrows-alt-v"></i>legend_kwargs</li>
+          <li class="nav-item" data-key="core-kitiki_cell_kwargs"><i class="fas fa-arrows-alt-v"></i>kitiki_cell_kwargs
+          </li>
+          <!-- Add more parameters as needed -->
+        </ul>
         <!-- Useful Links -->
         <!-- Footer Navigation Links (NOT Collapsible) -->
-        <ul class="nav-items footer-links" style="margin-top: 60%; border-top: 1px solid #01a33c; padding-top: 1rem;">
-          <a href="https://github.com/BodduSriPavan-111/chandassu" target="_blank" rel="noopener noreferrer"
+        <ul class="nav-items footer-links" style="margin-top: 68%; border-top: 1px solid #ddd; padding-top: 1rem;">
+          <a href="https://github.com/BodduSriPavan-111/kitikiplot" target="_blank" rel="noopener noreferrer"
             class="nav-item" style="display: block;">
             <i class="fab fa-python"></i> GitHub
           </a>
-          <a href="https://github.com/BodduSriPavan-111/chandassu/issues" target="_blank" rel="noopener noreferrer"
+          <a href="https://github.com/BodduSriPavan-111/kitikiplot/issues" target="_blank" rel="noopener noreferrer"
             class="nav-item" style="display: block;">
             <i class="fas fa-exclamation-circle"></i> Issues
           </a>
-          <a href="https://github.com/BodduSriPavan-111/chandassu/pulls" target="_blank" rel="noopener noreferrer"
+          <a href="https://github.com/BodduSriPavan-111/kitikiplot/pulls" target="_blank" rel="noopener noreferrer"
             class="nav-item" style="display: block;">
             <i class="fas fa-code-branch"></i> Pull Requests
           </a>
@@ -519,7 +570,7 @@
       // home
       "home": `
 <h1 style="text-align: center;">
-  Welcome to <span class="kitikiplot-shine">Chandassu</span> Documentation!
+  Welcome to <span class="kitikiplot-shine">KitikiPlot</span> Documentation!
 </h1>
 <div class="shields">
 <a href="https://img.shields.io/pypi/v/kitikiplot?color=gold"><img src="https://img.shields.io/pypi/v/kitikiplot?color=gold" alt="PyPI Version"></a>
@@ -527,13 +578,13 @@
 <a href="https://zenodo.org/badge/DOI/10.5281/zenodo.14632005.svg"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.14632005.svg" alt="DOI"></a>
 </div></br>
 <div class="author-note">
-<h2 style="font-size: 2rem; font-weight: normal"><i class="fa-solid fa-pen-nib"></i> Author's Note</h2>
+<h3><i class="fa-solid fa-pen-nib"></i>&nbsp; Author's Note</h3>
 <p>
-    Telugu, a Indian language spoken by over 75 million speakers across the world, possesses a rich tradition of metrical poetry known as chandassu. 
-    Unlike free verse, chandassu poetry adheres to strict prosodic patterns that govern syllabic weight, rhythm, and structural organization. 
-    We present, <strong>Chandassu</strong>, the first ever open-source Python library implementing Metrical Poetry in Telugu Language.
-    This framework includes AksharamTokenizer for prosody-aware tokenization, LaghuvuGuruvu Generator for classifying light and heavy syllables, and 
-    PadyaBhedam Checker for automated pattern recognition, and demonstrates how computational social science can preserve endangered cultural knowledge systems.
+    <strong>KitikiPlot</strong> is an open-source Python library designed for intuitive visualization of sequential categorical data using the sliding window technique.
+    <br /><br />
+    While Matplotlib excels at plotting continuous data, KitikiPlot fills the gap for categorical trends—making it ideal for researchers, data scientists, and analysts across genomics, electronics, weather forecasting, and more.
+    <br /><br />
+    Built on top of Matplotlib, it integrates seamlessly into projects, helping you spot patterns and make informed decisions quickly.
     <br /><br />
     <i class="fab fa-python"></i>&nbsp;PyPI: <a class="nav-link" href="https://pypi.org/project/kitikiplot/" style= "text-decoration: none" target="_blank">https://pypi.org/project/kitikiplot</a> </br>
     <i class="fab fa-github"></i>&nbsp;GitHub: <a href="https://github.com/BodduSriPavan-111/kitikiplot" style= "text-decoration: none" target="_blank">github.com/BodduSriPavan-111/kitikiplot</a>
@@ -541,314 +592,1884 @@
 </div>`,
 
       "getting-started": `<!-- Installation -->
-<h2 style="font-size: 2rem; font-weight: normal;">Installation</h2>
+<h2>Installation</h2>
 <hr />
 <div class="param-details" style="margin-bottom: 1rem;">
   <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
     <tr>
       <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">Command:</td>
-      <td style="vertical-align: top; text-align: left;"><code>pip install chandassu</code></td>
+      <td style="vertical-align: top; text-align: left;"><code>pip install kitikiplot</code></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">Specific version:</td>
+      <td style="vertical-align: top; text-align: left;"><code>pip install kitikiplot==0.2.9 (version number)</code></td>
     </tr>
   </table>
 </div>
-<h3 style="font-size: 1.5rem; font-weight: normal;">Quick Start</h3>
-<pre><button class="copy-btn" title="Copy code">Copy</button>
-<code class="language-python">from chandassu.laghuvu_guruvu import LaghuvuGuruvu
-from chandassu.padya_bhedam import check_padyam
+<br /><br />
 
-data= """తొండము నేక దంతమును తోరపు బొజ్జయు వామ హస్తమున్
-మెండుగ మ్రోయు గజ్జెలును మెల్లని చూపులు మందహాసమున్
-కొండొక గుజ్జు రూపమున కోరిన విద్యలకెల్ల నొజ్జవై
-యుండెడి పార్వతీ తనయ యోయి గణాధిప నీకు మ్రొక్కెదన్"""
-
-# Generate LaghuvuGuruvu Sequence
-lg_data= LaghuvuGuruvu(data= data).generate()
-
-score= check_padyam( 
-                        lg_data= lg_data ,
-                        type= "vutpalamaala",
-                        return_micro_score= True, 
-                        verbose= False
-                    )
-print(score)
-</code></pre>
-<h3 style="font-size: 1.5rem; font-weight: normal;">Output</h3>
-<div style="
-    background-color: #f0f4f8; 
-    border: 1px solid #d1d9e6; 
-    border-radius: 8px; 
-    padding: 1rem; 
-    font-family: monospace; 
-    font-size: 1rem; 
-    color: #2d3748;
-    white-space: pre-wrap;">
-{
-    'chandassu_score': 1.0, 
-    'micro_score': {
-                    'n_paadalu': 1.0, 
-                    'gana_kramam': 1.0, 
-                    'yati_sthanam': 1.0, 
-                    'n_aksharalu': 1.0, 
-                    'prasa': 1.0
-                  }
-}
+<!-- Version Cards Grid -->
+<h3>Available Versions</h3>
+<div class="version-grid">
+  <span class="version-card">v0.2.9</span>
+  <span class="version-card">v0.2.8</span>
+  <span class="version-card">v0.2.7</span>
+  <span class="version-card">v0.2.6</span>
+  <span class="version-card">v0.2.5</span>
+  <span class="version-card">v0.2.4</span>
+  <span class="version-card">v0.2.3</span>
+  <span class="version-card">v0.2.2</span>
+  <span class="version-card">v0.2.1</span>
+  <span class="version-card">v0.2.0</span>
+  <span class="version-card">v0.1.9</span>
+  <span class="version-card">v0.1.8</span>
+  <span class="version-card">v0.1.7</span>
+  <span class="version-card">v0.1.6</span>
+  <span class="version-card">v0.1.5</span>
+  <span class="version-card">v0.1.4</span>
+  <span class="version-card">v0.1.3</span>
+  <span class="version-card">v0.1.2</span>
+  <span class="version-card">v0.1.1</span>
+  <span class="version-card">v0.1.0</span>
 </div>
+</br>
+<!-- Quick Example -->
+<h3>Quick Start</h3>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+
+ktk.plot( )
+
+</code></pre></br>
+<img src="assets/data.png" alt="Data Example" class="output-img" />
 `,
 
-"AksharamTokenizer": `
-<h2 style="font-size: 2rem; font-weight: normal;">Aksharam Tokenizer</h2>
+      //_______________Genomics
+      "genomics-linear": `<h2>linear</h2>
 <hr />
 <div class="param-details" style="margin-bottom: 1rem;">
   <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
-    <tr>
-      <td style="vertical-align: top; text-align: left;">This method tokenizes input Telugu string into 'Aksharam Tokens', human-perceivable prosodic character units.</td>
-    </tr>
-  </table>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      Generates linear genomic plot for short genome sequences.
+    </td>
+  </tr>
+</table>
 </div>
-<h3 style="font-size: 1.5rem; font-weight: normal;">Quick Start</h3>
+</br>
 <pre><button class="copy-btn" title="Copy code">Copy</button>
-<code class="language-python">from chandassu.laghuvu_guruvu import LaghuvuGuruvu
+<code class="language-python">from kitikiplot.genomics import linear
 
-data= """తొండము నేక దంతమును తోరపు బొజ్జయు వామ హస్తమున్
-మెండుగ మ్రోయు గజ్జెలును మెల్లని చూపులు మందహాసమున్
-కొండొక గుజ్జు రూపమున కోరిన విద్యలకెల్ల నొజ్జవై
-యుండెడి పార్వతీ తనయ యోయి గణాధిప నీకు మ్రొక్కెదన్"""
+# Sample short genome sequence
+data= 'CGTTAGAGGATGGCGGTTGCGTCGTAACGCGGAATGGGCAACGGGACGGCTGGGT'
 
-# Apply AksharamTokenizer
-lg= LaghuvuGuruvu(data= data)
-tokens= lg.tokenize()
+# Preferred for smaller sequences of around 200 nucleotides
+linear.plot( 
+                nucleotide_sequence= data
+            )
 
-print(tokens)
-</code></pre>
-<h3 style="font-size: 1.5rem; font-weight: normal;">Output</h3>
-<div style="
-    background-color: #f0f4f8; 
-    border: 1px solid #d1d9e6; 
-    border-radius: 8px; 
-    padding: 1rem; 
-    font-family: monospace; 
-    font-size: 1rem; 
-    color: #2d3748;
-    white-space: pre-wrap;">
-['తొం', 'డ', 'ము', 'నే', 'క', 'దం', 'త', 'ము', 'ను', 'తో', 'ర', 'పు', 'బొ', 'జ్జ', 'యు', 'వా', 'మ', 'హ', 'స్త', 'మున్', 'మెం', 'డు', 'గ', 'మ్రో', 'యు', 'గ', 'జ్జె', 'లు', 'ను', 'మె', 'ల్ల', 'ని', 'చూ', 'పు', 'లు', 'మం', 'ద', 'హా', 'స', 'మున్', 'కొం', 'డొ', 'క', 'గు', 'జ్జు', 'రూ', 'ప', 'ము', 'న', 'కో', 'రి', 'న', 'వి', 'ద్య', 'ల', 'కె', 'ల్ల', 'నొ', 'జ్జ', 'వై', 'యుం', 'డె', 'డి', 'పా', 'ర్వ', 'తీ', 'త', 'న', 'య', 'యో', 'యి', 'గ', 'ణా', 'ధి', 'ప', 'నీ', 'కు', 'మ్రొ', 'క్కె', 'దన్']
-</div>
+</code></pre></br>
+<img src="assets/genomics_linear.png" alt="Data Example" class="output-img" />
 `,
-"LaghuvuGuruvuGenerator": `
-<h2 style="font-size: 2rem; font-weight: normal;">LaghuvuGuruvu Generator</h2>
+
+      "genomics-grid": `<h2>grid</h2>
 <hr />
 <div class="param-details" style="margin-bottom: 1rem;">
   <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
-    <tr>
-      <td style="vertical-align: top; text-align: left;">This method classifies given Telugu text into Laghuvu-Guruvu sequence.</td>
-    </tr>
-  </table>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      Generates grid genomic plot for short genome sequences.
+    </td>
+  </tr>
+</table>
 </div>
-<h3 style="font-size: 1.5rem; font-weight: normal;">Quick Start</h3>
+</br>
 <pre><button class="copy-btn" title="Copy code">Copy</button>
-<code class="language-python">from chandassu.laghuvu_guruvu import LaghuvuGuruvu
+<code class="language-python">from kitikiplot.genomics import grid
 
-data= """తొండము నేక దంతమును తోరపు బొజ్జయు వామ హస్తమున్
-మెండుగ మ్రోయు గజ్జెలును మెల్లని చూపులు మందహాసమున్
-కొండొక గుజ్జు రూపమున కోరిన విద్యలకెల్ల నొజ్జవై
-యుండెడి పార్వతీ తనయ యోయి గణాధిప నీకు మ్రొక్కెదన్"""
+# Sample short genome sequence
+data= 'CGTTAGAGGATGGCGGTTGCGTCGTAACGCGGAATGGGCAACGGGACGGCTGGGT'
 
-# Generate LaghuvuGuruvu Sequence
-lg= LaghuvuGuruvu(data= data)
-sequence= lg.generate()
+# Default 'window_length' is set to '30'
+grid.plot( nucleotide_sequence= data )
 
-print(sequence)
-</code></pre>
-<h3 style="font-size: 1.5rem; font-weight: normal;">Output</h3>
-<div style="
-    background-color: #f0f4f8; 
-    border: 1px solid #d1d9e6; 
-    border-radius: 8px; 
-    padding: 1rem; 
-    font-family: monospace; 
-    font-size: 1rem; 
-    color: #2d3748;
-    white-space: pre-wrap;">
-[('తొం', 'U'),
- ('డ', '|'),
- ('ము', '|'),
- ('నే', 'U'),
- ('క', '|'),
- ('దం', 'U'),
- ('త', '|'),
- ('ము', '|'),
- ('ను', '|'),
- ('తో', 'U'),
- ('ర', '|'),
- ('పు', '|'),
- ('బొ', 'U'),
- ('జ్జ', '|'),
- ('యు', '|'),
- ('వా', 'U'),
- ('మ', '|'),
- ('హ', 'U'),
- ('స్త', '|'),
- ('మున్', 'U'),
- ('మెం', 'U'),
- ('డు', '|'),
- ('గ', '|'),
- ('మ్రో', 'U'),
- ('యు', '|'),
- ('గ', 'U'),
- ('జ్జె', '|'),
- ('లు', '|'),
- ('ను', '|'),
- ('మె', 'U'),
- ('ల్ల', '|'),
- ('ని', '|'),
- ('చూ', 'U'),
- ('పు', '|'),
- ('లు', '|'),
- ('మం', 'U'),
- ('ద', '|'),
- ('హా', 'U'),
- ('స', '|'),
- ('మున్', 'U'),
- ('కొం', 'U'),
- ('డొ', '|'),
- ('క', '|'),
- ('గు', 'U'),
- ('జ్జు', '|'),
- ('రూ', 'U'),
- ('ప', '|'),
- ('ము', '|'),
- ('న', '|'),
- ('కో', 'U'),
- ('రి', '|'),
- ('న', '|'),
- ('వి', 'U'),
- ('ద్య', '|'),
- ('ల', '|'),
- ('కె', 'U'),
- ('ల్ల', '|'),
- ('నొ', 'U'),
- ('జ్జ', '|'),
- ('వై', 'U'),
- ('యుం', 'U'),
- ('డె', '|'),
- ('డి', '|'),
- ('పా', 'U'),
- ('ర్వ', '|'),
- ('తీ', 'U'),
- ('త', '|'),
- ('న', '|'),
- ('య', '|'),
- ('యో', 'U'),
- ('యి', '|'),
- ('గ', '|'),
- ('ణా', 'U'),
- ('ధి', '|'),
- ('ప', '|'),
- ('నీ', 'U'),
- ('కు', '|'),
- ('మ్రొ', 'U'),
- ('క్కె', '|'),
- ('దన్', 'U')]
-</div>
+</code></pre></br>
+<img src="assets/genomics_grid.png" alt="Data Example" class="output-img" />
+</br>
+<p style="margin-bottom: 0.5rem;">Window length can be increased.</p>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">
+grid.plot( nucleotide_sequence= data, window_length= 40 )
+
+</code></pre></br>
+<img src="assets/genomics_grid_1.png" alt="Data Example" class="output-img" />
+</br>
+<p style="margin-bottom: 0.5rem;">Window length can be decreased.</p>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">
+grid.plot( nucleotide_sequence= data, window_length= 10 )
+
+</code></pre></br>
+<img src="assets/genomics_grid_1.png" alt="Data Example" class="output-img" />
 `,
-"PadyaBhedamChecker": `
-<h2 style="font-size: 2rem; font-weight: normal;">PadyaBhedam Checker</h2>
-<hr />
 
+
+      //_______________Ecology
+      "ecology-linear": `<h2>linear</h2>
+<hr />
 <div class="param-details" style="margin-bottom: 1rem;">
   <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
-    <tr>
-      <td style="vertical-align: top; text-align: left;">
-        This method evaluates given Laghuvu-Guruvu data with given padyam type with confidence scores.
-      </td>
-    </tr>
-  </table>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      Linear Plot for ecological data. </br>
+      Focus can be set to highlight particular time-interval. </br>
+      Contains all the parameters of 'kitikiplot.core.plot'.
+    </td>
+  </tr>
+</table>
 </div>
-
-<h3 style="font-size: 1.5rem; font-weight: normal;">Parameters</h3>
-<div class="param-details" style="margin-bottom: 1rem;">
-  <table style="width: 100%; border-collapse: collapse; font-size: 1rem; border: 1px solid #ddd;">
-    <thead>
-      <tr style="background-color: #f2f2f2;">
-        <th style="text-align: left; padding: 0.5rem; border: 1px solid #ddd;">Parameter</th>
-        <th style="text-align: left; padding: 0.5rem; border: 1px solid #ddd;">Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="padding: 0.5rem; border: 1px solid #ddd;">lg_data (list)</td>
-        <td style="padding: 0.5rem; border: 1px solid #ddd;">
-          Laghuvu-Guruvu data generated using laghuvu_guruvu.LaghuvuGuruvu.generate()
-        </td>
-      </tr>
-      <tr>
-        <td style="padding: 0.5rem; border: 1px solid #ddd;">type (str)</td>
-        <td style="padding: 0.5rem; border: 1px solid #ddd;">
-          Type of padyam. Currently supported types: 'kandamu', 'aataveladi', 'teytageethi', 'seesamu', 'vutpalamaala', 'champakamaala', 'mattebhamu', 'saardulamu'
-        </td>
-      </tr>
-      <tr>
-        <td style="padding: 0.5rem; border: 1px solid #ddd;">return_micro_score (bool)</td>
-        <td style="padding: 0.5rem; border: 1px solid #ddd;">
-          Set to 'True' to return lakshanamwise scores (micro scores). Default is set to 'True'.
-        </td>
-      </tr>
-      <tr>
-        <td style="padding: 0.5rem; border: 1px solid #ddd;">verbose (bool)</td>
-        <td style="padding: 0.5rem; border: 1px solid #ddd;">
-          Prints the result of each step for better traceability. Default is set to 'False'.
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<h3 style="font-size: 1.5rem; font-weight: normal;">Code</h3>
+</br>
+<p style="margin-bottom: 0.5rem;">Focus can be set to (start, end-1).</p>
 <pre><button class="copy-btn" title="Copy code">Copy</button>
-<code class="language-python">from chandassu.laghuvu_guruvu import LaghuvuGuruvu
-from chandassu.padya_bhedam import check_padyam
+<code class="language-python">from kitikiplot.ecology import linear
 
-data= """తొండము నేక దంతమును తోరపు బొజ్జయు వామ హస్తమున్
-మెండుగ మ్రోయు గజ్జెలును మెల్లని చూపులు మందహాసమున్
-కొండొక గుజ్జు రూపమున కోరిన విద్యలకెల్ల నొజ్జవై
-యుండెడి పార్వతీ తనయ యోయి గణాధిప నీకు మ్రొక్కెదన్"""
+# Sample Data
+CO_values= [3, 3, 3, 3, -200, 2, 1, 1, 1, 1, 2, 3, 4, 4, 3, 3, 3, 2]
+time_period= ['0 am', '1 am', '2 am', '3 am', '4 am', '5 am', '6 am', '7 am', '8 am', '9 am', '10 am',
+              '11 am', '12 pm', '13 pm', '14 pm', '15 pm', '16 pm', '17 pm']
 
-# Generate LaghuvuGuruvu Sequence
-lg_data= LaghuvuGuruvu(data= data).generate()
+linear.plot(
+            data=  CO_values,
+            stride= 1,
+            focus= (4,9),   # Set focus
+            focus_alpha= 0.1,
+            cmap= {-200: "#00db3e", 1: "#00b7db", 2: "#4400d8", 3: "#ff7070", 4: "#b0009b"},
+            xlabel= "Time",
+            ylabel= "CO(GT) values (in mg/m^3)",
+            xticks_values= time_period,
+            ytick_prefix= "Window",
+          )
 
-# Check Padyam Type
-score= check_padyam( 
-                        lg_data= lg_data ,
-                        type= "vutpalamaala",
-                        return_micro_score= True, 
-                        verbose= False
-                    )
+</code></pre></br>
+<img src="assets/ecology_linear.png" alt="Data Example" class="output-img" />
+</br>
+<p style="margin-bottom: 0.5rem;">Change the focus interval.</p>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">
+linear.plot( 
+            data=  CO_values,
+            stride= 1,
+            focus= (14,17),
+            focus_alpha= 0.05,
+            cmap= {-200: "#00db3e", 1: "#00b7db", 2: "#4400d8", 3: "#ff7070", 4: "#b0009b"},
+            xlabel= "Time",
+            ylabel= "CO(GT) values (in mg/m^3)",
+            xticks_values= time_period,
+            ytick_prefix= "Window",
+            )
 
-print(score)
-</code></pre>
-<h3 style="font-size: 1.5rem; font-weight: normal;">Output</h3>
-<div style="
-    background-color: #f0f4f8; 
-    border: 1px solid #d1d9e6; 
-    border-radius: 8px; 
-    padding: 1rem; 
-    font-family: monospace; 
-    font-size: 1rem; 
-    color: #2d3748;
-    white-space: pre-wrap;">
-{
-    'chandassu_score': 1.0, 
-    'micro_score': {
-                    'n_paadalu': 1.0, 
-                    'gana_kramam': 1.0, 
-                    'yati_sthanam': 1.0, 
-                    'n_aksharalu': 1.0, 
-                    'prasa': 1.0
-                  }
-}
+</code></pre></br>
+<img src="assets/ecology_linear_1.png" alt="Data Example" class="output-img" />
+`,
 
+      "ecology-grid": `<h2>grid</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      The input data to be processed.</br>
+      Focus can be set to highlight particular time-interval of sliding window. </br>
+      Contains all the parameters of 'kitikiplot.core.plot'.
+    </td>
+  </tr>
+</table>
 </div>
-` 
-};
+</br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.ecology import grid
+
+# Sample Data
+CO_values= [3, 3, 3, 3, -200, 2, 1, 1, 1, 1, 2, 3, 4, 4, 3, 3, 3, 2]
+time_period= ['0 am', '1 am', '2 am', '3 am', '4 am', '5 am', '6 am', '7 am', '8 am', '9 am', '10 am',
+              '11 am', '12 pm', '13 pm', '14 pm', '15 pm', '16 pm', '17 pm']
+
+grid.plot(
+            data= CO_values,
+            stride= 3,
+            window_length= 6,
+            cmap= {-200: "#00db3e", 1: "#00b7db", 2: "#4400d8", 3: "#ff7070", 4: "#b0009b"},
+            focus= True,
+            focus_alpha= 0.2,
+            xlabel= "Time",
+            ylabel= "Sliding Windows of CO(GT) values (in mg/m^3)",
+            display_xticks= True,
+            xticks_values= time_period,
+            ytick_prefix= "Window",
+            title= "CO(GT) Trend in Air"
+        )
+
+</code></pre></br>
+<img src="assets/ecology_grid.png" alt="Data Example" class="output-img" />
+</br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">
+grid.plot(
+            data= CO_values, 
+            stride= 2, 
+            window_length= 9,
+            cmap= {-200: "#00db3e", 1: "#00b7db", 2: "#4400d8", 3: "#ff7070", 4: "#b0009b"},
+            focus= True,
+            focus_alpha= 0.2,
+            transpose= False,
+            xlabel= "Sliding Windows of CO(GT) values (in mg/m^3)",
+            ylabel= "Time",
+            yticks_values= time_period,
+            ytick_prefix= "Window",
+            title= "CO(GT) Trend in Air"
+        )
+
+</code></pre></br>
+<img src="assets/ecology_grid_1.png" alt="Data Example" class="output-img" />
+
+`,
+
+      //_________________ data
+      "core-data": `<h2>data</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      The input data to be processed.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>pd.DataFrame or list or str</code>
+    </td>
+  </tr>
+</table>
+</div>
+</br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+
+ktk.plot( )
+
+</code></pre></br>
+<img src="assets/data.png" alt="Data Example" class="output-img" />`,
+
+      //_________________ stride
+      "core-stride": `
+<h2>stride</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  
+
+<table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      Specifies how many elements the sliding window shifts after each step.<br />
+      A smaller stride results in overlapping windows, capturing more local patterns.<br />
+      A larger stride increases performance but may skip finer details.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>int (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>1</code></td>
+    </tr>
+</table>
+</div>
+</br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk = KitikiPlot(data=df["Summary"].values.tolist(), stride=2)
+ktk.plot(cell_width=2, transpose=True)
+
+</code></pre></br>
+<img src="assets/stride.png" alt="Stride Example" class="output-img" />
+</br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python"># Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist(), stride= 5 )
+ktk.plot( cell_width= 2, transpose= True )  
+
+</code></pre></br>
+<img src="assets/stride_1.png" alt="Stride Example" class="output-img" />   
+`,
+
+
+      //_________________ window_length
+      "core-window_length": `<h2>window_length</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      The length of each window when converting a list to a DataFrame.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>int (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>10</code></td>
+    </tr>
+</table>
+</div>
+</br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist(), window_length= 5 )
+ktk.plot( transpose= True,
+          xtick_prefix= "Frame",
+          ytick_prefix= "Window",
+          cell_width= 2 ) 
+
+</code></pre></br>
+<img src="assets/window_length.png" alt="Window Length Example" class="output-img" />
+</br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python"># Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist(), window_length= 10 )
+ktk.plot( transpose= True,
+          xtick_prefix= "Frame",
+          ytick_prefix= "Window",
+          cell_width= 2 )
+
+</code></pre></br>
+<img src="assets/window_length_1.png" alt="Window Length Example" class="output-img" />
+`,
+
+      //_________________ figsize
+      "core-figsize": `<h2>figsize</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      The size of the figure (width, height).
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>tuple (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>(25, 5)</code></td>
+    </tr>
+</table>
+</div>
+</br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( figsize= (20, 8) ) 
+
+</code></pre></br>
+<img src="assets/figsize.png" alt="Figsize Example" class="output-img" />`,
+
+      //_________________ cell_width
+      "core-cell_width": `<h2>cell_width</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      The width of each cell in the grid.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>float (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>0.5</code></td>
+    </tr>
+</table>
+</div>
+</br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( cell_width= 2 )
+
+</code></pre></br>
+<img src="assets/cell_width.png" alt="Cell Width Example" class="output-img" />`,
+
+      //_________________ cell_height
+      "core-cell_height": `<h2>cell_height</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      The height of each cell in the grid.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>float (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>2.0</code></td>
+    </tr>
+</table>
+</div>
+</br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( cell_height= 3 )
+
+</code></pre></br>
+<img src="assets/cell_height.png" alt="Cell Height Example" class="output-img" />`,
+
+      //_________________ window_gap
+      "core-window_gap": `
+<h2>window_gap</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      The gap between cells in the grid.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>float (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>1.0</code></td>
+    </tr>
+</table>
+</div>
+</br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( window_gap= 3 )
+
+</code></pre></br>
+<img src="assets/window_gap.png" alt="Window Gap Example" class="output-img" />
+`,
+
+      //_________________ window_range
+      "core-window_range": `
+<h2>window_range</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        The range of windows to display. </br>
+        Use "all" to show all windows or specify a tuple (start_index, end_index).
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>str or tuple (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>"all"</code></td>
+    </tr>
+</table>
+</div>
+</br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( window_range= "all" )
+
+</code></pre></br>
+<img src="assets/window_range.png" alt="Window Range Example" class="output-img" />
+</br></br>
+
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( window_range= (3,8) )
+
+</code></pre></br>
+<img src="assets/window_range_1.png" alt="Window Range Example" class="output-img" />
+`,
+
+      //_________________ align
+      "core-align": `
+<h2>align</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        A flag indicating whether to shift consecutive bars vertically (if transpose= False).</br>
+        And horizontally(if transpose= True) by stride value.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>bool (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>True</code></td>
+    </tr>
+</table>
+</div>
+</br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( align= True )
+
+</code></pre></br>
+<img src="assets/align.png" alt="Align Example" class="output-img" />
+</br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python"># Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk.plot( 
+         align= False,
+         display_yticks= False # Display no yticks
+        )
+
+</code></pre></br>
+<img src="assets/align_1.png" alt="Align Example" class="output-img" />
+</br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python"># Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk.plot( 
+         cell_width= 2, 
+         align= True, 
+         transpose= True, 
+         xlabel= "Frames",
+         ylabel= "Sliding Windows",
+         xtick_prefix= "Frame",
+         ytick_prefix= "Window"
+        )
+
+</code></pre></br>
+<img src="assets/align_2.png" alt="Align Example" class="output-img" />
+</br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python"># Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk.plot( 
+         cell_width= 2, 
+         align= False, 
+         transpose= True,
+         xlabel= "Frames",
+         ylabel= "Sliding Windows",
+         ytick_prefix= "Window",
+         display_xticks= False 
+        )
+
+</code></pre></br>
+<img src="assets/align_3.png" alt="Align Example" class="output-img" />
+`,
+
+      //_________________ cmap
+      "core-cmap": `
+<h2>cmap</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        If a string, it should be a colormap name to generate colors.</br>
+        If a dictionary, it should map unique values to specific colors.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>str or dict (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>'rainbow'</code></td>
+    </tr>
+</table>
+</div>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( 
+          cmap= "Greens",
+          display_legend= True
+        )
+
+</code></pre></br>
+<img src="assets/cmap.png" alt="Cmap Example" class="output-img" />
+</br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">
+ktk.plot( 
+          cmap= {"Mostly Cloudy": "Green"},
+          display_legend= True
+        )
+
+</code></pre></br>
+<img src="assets/cmap_1.png" alt="Cmap Example" class="output-img" />
+`,
+
+      //_________________ edge_color
+      "core-edge_color": `
+<h2>edge_color</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        The color to use for the edges of the rectangle.</br>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>str (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>'#000000'</code></td>
+    </tr>
+</table></br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( 
+          cmap= {"Mostly Cloudy": "Green"},
+          fallback_color= "wheat",
+          edge_color= "blue",
+        )
+          
+</code></pre></br>
+<img src="assets/edge_color.png" alt="Edge Color Example" class="output-img" />
+`,
+
+      //_________________ fallback_color
+      "core-fallback_color": `
+<h2>fallback_color</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        The color to use as fallback if no specific color is assigned.</br>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>str (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>'#FAFAFA'</code></td>
+    </tr>
+</table>
+</div></br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( 
+          cmap= {"Mostly Cloudy": "Green"},
+          fallback_color= "wheat",
+          display_legend= True
+        )
+          
+</code></pre></br>
+<img src="assets/fallback_color.png" alt="Fallback Color Example" class="output-img" />
+`,
+
+      //_________________ hmap
+      "core-hmap": `
+<h2>hmap</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        A dictionary mapping unique values to their corresponding hatch patterns.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>dict (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>'{}'</code></td>
+    </tr>
+</table>
+</div></br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( 
+          cmap= {"Mostly Cloudy": "grey"},
+          fallback_color= "white",
+          hmap= {"Mostly Cloudy": "|*|"},
+          display_hatch= True
+        )
+          
+</code></pre></br>
+<img src="assets/hmap.png" alt="Hmap Example" class="output-img" />
+`,
+
+      //_________________ fallback_hatch
+      "core-fallback_hatch": `
+<h2>fallback_hatch</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        The hatch pattern to use as fallback if no specific hatch is assigned.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>str (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>'" "' (string with single space)</code></td>
+    </tr>
+</table>
+</div></br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( 
+          cmap= {"Mostly Cloudy": "grey"},
+          fallback_color= "white",
+          hmap= {"Mostly Cloudy": "|*|"},
+          fallback_hatch= "\\",
+          display_hatch= True
+        )
+          
+</code></pre></br>
+<img src="assets/fallback_hatch.png" alt="Fallback Hatch Example" class="output-img" />
+`,
+
+      //_________________ display_hatch
+      "core-display_hatch": `
+<h2>display_hatch</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        A flag indicating whether to display hatch patterns on cells.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>bool (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>False</code></td>
+    </tr>
+</table>
+</div></br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( 
+          cmap= {"Mostly Cloudy": "#ffffff"},
+          fallback_color= "white",
+          display_hatch= True
+        )
+          
+</code></pre></br>
+<img src="assets/display_hatch.png" alt="Display Hatch Example" class="output-img" />
+`,
+
+      //_________________ focus
+      "core-focus": `
+<h2>focus</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        Index range to set focus highlight. <br>
+        If focus is (i, j) then index values: i, i+1, i+2, ... j-1 are highlighted (0% transparent)
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>tuple or list or None (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>None</code></td>
+    </tr>
+</table>
+</div></br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+
+CO_values= [3, 3, 3, 3, -200, 2, 1, 1, 1, 1, 2, 3, 4, 4, 3, 3, 3, 2]
+time_period= ['0 am', '1 am', '2 am', '3 am', '4 am', '5 am', '6 am', '7 am', '8 am', '9 am', '10 am',
+              '11 am', '12 pm', '13 pm', '14 pm', '15 pm', '16 pm', '17 pm']
+ktk= KitikiPlot( data= CO_values, stride= 1, window_length= 8 )
+
+ktk.plot(
+        figsize= (20, 5),
+        cell_width= 2,
+        cmap= {-200: "#00db3e", 1: "#00b7db", 2: "#4400d8", 3: "#ff7070", 4: "#b0009b"},
+        focus= True,
+        transpose= False,
+        xlabel= "Sliding Windows of CO(GT) values (in mg/m^3)",
+        ylabel= "Time",
+        display_xticks= True,
+        yticks_values= time_period,
+        ytick_prefix= "Window",
+        xticks_rotation= 90, 
+        display_legend= True,
+        title= "CO(GT) Trend in Air",
+        legend_kwargs= {"bbox_to_anchor": (1.01, 1), "loc":'upper left', "borderaxespad": 0.})
+          
+</code></pre></br>
+<img src="assets/focus.png" alt="Focus Example" class="output-img" />
+`,
+
+      //_________________ focus_alpha
+      "core-focus_alpha": `
+<h2>focus_alpha</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        Transparency value to de-emphasize indices falling out of 'focus'.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>float (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>0.25</code></td>
+    </tr>
+</table>
+</div></br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+
+CO_values= [3, 3, 3, 3, -200, 2, 1, 1, 1, 1, 2, 3, 4, 4, 3, 3, 3, 2]
+time_period= ['0 am', '1 am', '2 am', '3 am', '4 am', '5 am', '6 am', '7 am', '8 am', '9 am', '10 am',
+              '11 am', '12 pm', '13 pm', '14 pm', '15 pm', '16 pm', '17 pm']
+ktk= KitikiPlot( data= CO_values, stride= 1, window_length= 8 )
+
+ktk.plot(
+        figsize= (20, 5),
+        cell_width= 2,
+        cmap= {-200: "#00db3e", 1: "#00b7db", 2: "#4400d8", 3: "#ff7070", 4: "#b0009b"},
+        focus= True,
+        focus_alpha= 0.05,
+        transpose= False,
+        xlabel= "Sliding Windows of CO(GT) values (in mg/m^3)",
+        ylabel= "Time",
+        display_xticks= True,
+        yticks_values= time_period,
+        ytick_prefix= "Window",
+        xticks_rotation= 90, 
+        display_legend= True,
+        title= "CO(GT) Trend in Air",
+        legend_kwargs= {"bbox_to_anchor": (1.01, 1), "loc":'upper left', "borderaxespad": 0.})
+          
+</code></pre></br>
+<img src="assets/focus_alpha.png" alt="Focus Alpha Example" class="output-img" />
+`,
+
+      //_________________ transpose
+      "core-transpose": `
+<h2>transpose</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        A flag indicating whether to transpose the KitikiPlot.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>bool (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>False</code></td>
+    </tr>
+</table>
+</div></br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( transpose= False )
+          
+</code></pre></br>
+<img src="assets/transpose.png" alt="Transpose Example" class="output-img" />
+</br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python"># Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk.plot( 
+            cell_width= 2,
+            transpose= True,
+            xtick_prefix= "Frame",
+            ytick_prefix= "Window",
+            xlabel= "Frames",
+            ylabel= "Sliding_Windows" )
+          
+</code></pre></br>
+<img src="assets/transpose_1.png" alt="Transpose Example" class="output-img" />
+`,
+
+      //_________________ xlabel
+      "core-xlabel": `
+<h2>xlabel</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        Label for the x-axis.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>str (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>"Sliding Windows"</code></td>
+    </tr>
+</table>
+</div></br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( xlabel= "Observation Window" )
+          
+</code></pre></br>
+<img src="assets/xlabel.png" alt="XLabel Example" class="output-img" />
+`,
+
+      //_________________ ylabel
+      "core-ylabel": `
+<h2>ylabel</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        Label for the y-axis.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>str (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>"Frames"</code></td>
+    </tr>
+</table>
+</div></br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( ylabel= "Frame ID" )
+          
+</code></pre></br>
+
+<img src="assets/ylabel.png" alt="YLabel Example" class="output-img" />
+`,
+
+      //_________________ display_xticks
+      "core-display_xticks": `
+<h2>display_xticks</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        A flag indicating whether to display xticks.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>bool (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>True</code></td>
+    </tr>
+</table>
+</div></br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( display_xticks= False )
+          
+</code></pre></br>
+
+<img src="assets/display_xticks.png" alt="Display XTicks Example" class="output-img" />
+`,
+
+      //_________________ display_yticks
+      "core-display_yticks": `
+<h2>display_yticks</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        A flag indicating whether to display yticks.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>bool (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>True</code></td>
+    </tr>
+</table>
+</div></br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( display_yticks= False )
+          
+</code></pre></br>
+
+<img src="assets/display_yticks.png" alt="Display YTicks Example" class="output-img" />
+`,
+
+      //_________________ xtick_prefix
+      "core-xtick_prefix": `
+<h2>xtick_prefix</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        Prefix for x-axis tick labels.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>str (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>"Window"</code></td>
+    </tr>
+</table>
+</div></br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( xtick_prefix= "Observation" )
+          
+</code></pre></br>
+
+<img src="assets/xtick_prefix.png" alt="YTick Prefix Example" class="output-img" />
+`,
+
+      //_________________ ytick_prefix
+      "core-ytick_prefix": `
+<h2>ytick_prefix</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        Prefix for y-axis tick labels.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>str (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>"Frame"</code></td>
+    </tr>
+</table>
+</div></br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( ytick_prefix= "Time" )
+          
+</code></pre></br>
+
+<img src="assets/ytick_prefix.png" alt="YTick Prefix Example" class="output-img" />
+`,
+
+      //_________________ xticks_values
+      "core-xticks_values": `
+<h2>xticks_values</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        List containing the values for xticks.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>list (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>[] (empty list)</code></td>
+    </tr>
+</table>
+</div></br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+xtick_values= ['Start', "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9", "End"]
+ktk.plot( xticks_values= xtick_values )
+          
+</code></pre></br>
+<img src="assets/xticks_values.png" alt="XTicks Values Example" class="output-img" />
+`,
+
+      //_________________ yticks_values
+      "core-yticks_values": `
+<h2>yticks_values</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        List containing the values for yticks.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>list (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>[] (empty list)</code></td>
+    </tr>
+</table>
+</div></br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+yticks_values= [(str(i.hour)+" "+i.strftime("%p").lower()) for i in  pd.to_datetime(df["Formatted Date"])]
+ktk.plot( yticks_values= yticks_values )
+          
+</code></pre></br>
+<img src="assets/yticks_values.png" alt="YTicks Values Example" class="output-img" />
+`,
+
+      //_________________ xticks_rotation
+      "core-xticks_rotation": `
+<h2>xticks_rotation</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        Rotation angle for x-axis tick labels.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>int (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>0</code></td>
+    </tr>
+</table>
+</div></br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( xticks_rotation= 45 )
+          
+</code></pre></br>
+
+<img src="assets/xticks_rotation.png" alt="XTicks Rotation Example" class="output-img" />
+`,
+
+      //_________________ yticks_rotation
+      "core-yticks_rotation": `
+<h2>yticks_rotation</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        Rotation angle for y-axis tick labels.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>int (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>0</code></td>
+    </tr>
+</table>
+</div></br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( 
+          figsize= (20, 8),     # Increase height of the plot for good visualization (here)
+          yticks_rotation= 45 
+        )
+          
+</code></pre></br>
+
+<img src="assets/yticks_rotation.png" alt="YTicks Rotation Example" class="output-img" />
+`,
+
+      //_________________ title
+      "core-title": `
+<h2>title</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        The title of the plot.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>str (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>"KitikiPlot: Intuitive Visualization for Sliding Window"</code></td>
+    </tr>
+</table>
+</div></br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( title= "KitikiPlot for Weather Dataset")
+          
+</code></pre></br>
+
+<img src="assets/title.png" alt="Title Example" class="output-img" />
+`,
+
+      //_________________ display_grid
+      "core-display_grid": `
+<h2>display_grid</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        A flag indicating whether to display grid on the plot.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>bool (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>False</code></td>
+    </tr>
+</table>
+</div></br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist()[:15] )
+ktk.plot( display_grid= True )
+          
+</code></pre></br>
+
+<img src="assets/display_grid.png" alt="Display Grid Example" class="output-img" />
+</br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python"># Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk.plot( 
+          cell_width= 2,
+          transpose= True,  
+          xlabel= "Frames",
+          ylabel= "Sliding Windows",
+          ytick_prefix= "Window",
+          display_xticks= False,
+          display_grid= True 
+        )
+          
+</code></pre></br>
+
+<img src="assets/display_grid_1.png" alt="Display Grid Example" class="output-img" />
+`,
+
+      //_________________ display_legend
+      "core-display_legend": `
+<h2>display_legend</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        A flag indicating whether to display a legend on the plot.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>bool (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>False</code></td>
+    </tr>
+</table>
+</div></br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( display_legend= True )
+          
+</code></pre></br>
+
+<img src="assets/display_legend.png" alt="Display Legend Example" class="output-img" />
+`,
+
+      //_________________ legend_hatch
+      "core-legend_hatch": `
+<h2>legend_hatch</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        A flag indicating whether to include hatch patterns in the legend.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>bool (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>False</code></td>
+    </tr>
+</table>
+</div></br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist() )
+ktk.plot( 
+          cmap= {"Mostly Cloudy": "#ffffff"},
+          fallback_color= "white",
+          display_hatch= True,
+          display_legend= True,
+          legend_hatch= True
+        )
+          
+</code></pre></br>
+<img src="assets/legend_hatch.png" alt="Legend Hatch Example" class="output-img" />
+`,
+
+      //_________________ return_figure
+      "core-return_figure": `
+<h2>return_figure</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        A flag indicating whether to return plot.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>bool (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>False</code></td>
+    </tr>
+</table>
+</div>
+</br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python">from kitikiplot.core import KitikiPlot
+  
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist(), stride= 5 )
+figure= ktk.plot( cell_width= 2, transpose= True, return_figure= True ) 
+figure.show()
+          
+</code></pre></br>
+<img src="assets/return_figure.png" alt="Return Figure Example" class="output-img" />
+`,
+
+      //_________________ legend_kwargs
+      "core-legend_kwargs": `
+<h2>legend_kwargs</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        Additional keyword arguments passed to customize the legend.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>dict (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>{}</code></td>
+    </tr>
+</table>
+</div>
+</br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python"># Place legend outside of the Plot
+  
+from kitikiplot.core import KitikiPlot
+
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist()[:15] )
+ktk.plot( 
+          figsize= (15, 5),
+          display_legend= True,
+          legend_kwargs= {"bbox_to_anchor": (1, 1.0), "loc":"upper left"}
+        )
+          
+</code></pre></br>
+<img src="assets/legend_kwargs.png" alt="Return Figure Example" class="output-img" />
+</br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python"># Set title for the legend
+
+ktk.plot( 
+          figsize= (15, 5),
+          display_legend= True,
+          legend_kwargs= {"title": "Weather Conditions"} 
+        )
+          
+</code></pre></br>
+<img src="assets/legend_kwargs_1.png" alt="Return Figure Example" class="output-img" />
+</br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python"># Change edgecolor of the legend
+
+ktk.plot( 
+          figsize= (15, 5),
+          display_legend= True,
+          legend_kwargs= {"edgecolor": "lime"} 
+        )
+          
+</code></pre></br>
+<img src="assets/legend_kwargs_2.png" alt="Return Figure Example" class="output-img" />
+`,
+
+      //_________________ kitiki_cell_kwargs
+      "core-kitiki_cell_kwargs": `
+<h2>kitiki_cell_kwargs</h2>
+<hr />
+<div class="param-details" style="margin-bottom: 1rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem; font-weight: bold;">
+      Description:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+        Additional keyword arguments passed to customize individual cells.
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px; padding-right: 0.5rem;">
+      Data Type:
+    </td>
+    <td style="vertical-align: top; text-align: left;">
+      <code>dict (optional)</code>
+    </td>
+  </tr>
+    <tr>
+    <td style="vertical-align: top;">Default Value:</td>
+    <td><code>{}</code></td>
+    </tr>
+</table>
+</div>
+</br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python"># Set the line style
+  
+from kitikiplot.core import KitikiPlot
+
+# Consider 'df' is a 'pd.DataFrame' containing 'Summary' column
+ktk= KitikiPlot( data= df["Summary"].values.tolist()[:15] )
+ktk.plot( 
+        figsize= (15, 5),
+        kitiki_cell_kwargs= {"linestyle": "--"} )
+          
+</code></pre></br>
+<img src="assets/kitikicell_kwargs.png" alt="Cell Height Example" class="output-img" />
+</br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python"># Adjust the line width
+  
+ktk.plot( 
+          figsize= (15, 5),
+          kitiki_cell_kwargs= {"linewidth": 3}
+        )
+          
+</code></pre></br>
+<img src="assets/kitikicell_kwargs_1.png" alt="Cell Height Example" class="output-img" />
+</br></br>
+<pre><button class="copy-btn" title="Copy code">Copy</button>
+<code class="language-python"># Adjust the alpha
+  
+ktk.plot( 
+          figsize= (15, 5),
+          kitiki_cell_kwargs= {"alpha": 0.4}
+        )
+          
+</code></pre></br>
+<img src="assets/kitikicell_kwargs_2.png" alt="Cell Height Example" class="output-img" />
+`};
 
 
 
@@ -906,7 +2527,7 @@ print(score)
       if (copyBtn && codeBlock) {
         copyBtn.addEventListener("click", () => {
           navigator.clipboard.writeText(codeBlock.textContent.trim()).then(() => {
-            copyBtn.textContent = "✓";
+            copyBtn.textContent = "Copied!";
             setTimeout(() => (copyBtn.textContent = "Copy"), 1500);
           });
         });
@@ -919,7 +2540,60 @@ print(score)
     const urlParams = new URLSearchParams(window.location.search);
     const expand = urlParams.get("expand");
 
-    renderContent("home");
+    if (expand === "genomics") {
+      const section = [...document.querySelectorAll(".nav-section")].find(s =>
+        s.textContent.trim().toLowerCase() === "kitikiplot.genomics"
+      );
+      if (section) {
+        const nextUL = section.nextElementSibling;
+        const icon = section.querySelector("i");
+
+        if (nextUL && icon && nextUL.classList.contains("collapsed")) {
+          nextUL.classList.remove("collapsed");
+          icon.classList.remove("fa-chevron-right");
+          icon.classList.add("fa-chevron-down");
+        }
+      }
+
+      renderContent("genomics-grid");  // or "genomics-linear" if preferred
+    }
+    else if (expand === "ecology") {
+      const section = [...document.querySelectorAll(".nav-section")].find(s =>
+        s.textContent.trim().toLowerCase() === "kitikiplot.ecology"
+      );
+      if (section) {
+        const nextUL = section.nextElementSibling;
+        const icon = section.querySelector("i");
+
+        if (nextUL && icon && nextUL.classList.contains("collapsed")) {
+          nextUL.classList.remove("collapsed");
+          icon.classList.remove("fa-chevron-right");
+          icon.classList.add("fa-chevron-down");
+        }
+      }
+
+      renderContent("ecology-grid");  // or "genomics-linear" if preferred
+    }
+    else if (expand === "core") {
+      const section = [...document.querySelectorAll(".nav-section")].find(s =>
+        s.textContent.trim().toLowerCase() === "kitikiplot.core"
+      );
+      if (section) {
+        const nextUL = section.nextElementSibling;
+        const icon = section.querySelector("i");
+
+        if (nextUL && icon && nextUL.classList.contains("collapsed")) {
+          nextUL.classList.remove("collapsed");
+          icon.classList.remove("fa-chevron-right");
+          icon.classList.add("fa-chevron-down");
+        }
+      }
+
+      renderContent("core-data");  // or "genomics-linear" if preferred
+    }
+    else {
+      renderContent("home");
+    }
 
 
     // Navigation click event
